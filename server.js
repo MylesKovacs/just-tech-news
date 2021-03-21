@@ -9,7 +9,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection');
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
+const helpers = require('./utils/helpers');
 
 const sess = {
   secret: 'Super secret seecret',
